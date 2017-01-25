@@ -6,7 +6,7 @@ var bio = {
     "email": "john.doe@gmail.com",
     "github": "johndoe",
     "twitter": "@johndoe",
-    "location": "San Fransisco"
+    "location": "Washington"
   },
   "welcomeMessage": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "skills": [
@@ -27,7 +27,7 @@ var education = {
     },
     {
       "name": "Eckerd College",
-      "city": "Saint Petersburg",
+      "city": "New York",
       "degree": "BA",
       "majors": ["CS"],
       "dates": 2007,
@@ -56,12 +56,14 @@ var work = {
       "employer": "Planet Express",
       "title": "Delivery Boy",
       "dates": "2010 - 2020",
+      "location": "Moscow",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "employer": "Pizzaturn",
       "title": "Delivery Boy",
       "dates": "1998 - 2003",
+      "location": "Amsterdam",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
   ]
@@ -147,6 +149,9 @@ work.display = function() {
 
     var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
     $(".work-entry:last").append(formattedWorkDates);
+
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    $(".work-entry:last").append(formattedLocation);
 
     var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedWorkDescription);
@@ -236,4 +241,4 @@ var inName = function (name){
 }
 
 // MAP
-// $("#mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap);
